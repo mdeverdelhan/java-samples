@@ -1,4 +1,4 @@
 java-samples
 ============
 
-Java samples
+Repository for personal Java samples and PoCs.
