@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>eu.verdelhan</groupId>
+    <artifactId>java-samples</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Java samples</name>
+    <description>Personal Java samples and PoCs.</description>
+    <url>http://github.com/mdeverdelhan/java-samples</url>
+    <inceptionYear>2014</inceptionYear>
+
+    <developers>
+        <developer>
+            <name>Marc de Verdelhan</name>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <comments>All source code is under the MIT license.</comments>
+        </license>
+    </licenses>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>http://github.com/mdeverdelhan/java-samples/issues</url>
+    </issueManagement>
+
+    <ciManagement>
+        <url>http://travis-ci.org/mdeverdelhan/java-samples</url>
+    </ciManagement>
+
+    <modules>
+        <module>jodreports-samples</module>
+        <module>jspf-samples</module>
+        <module>twitter4j-samples</module>
+    </modules>
+
+    <properties>
+        <!-- Encoding -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+</project>
