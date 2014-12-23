@@ -9,10 +9,4 @@ nbactions.xml
 log/
 bin/
 target/
-
 *.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
