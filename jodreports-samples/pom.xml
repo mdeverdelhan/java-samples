@@ -2,12 +2,16 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>eu.verdelhan.samples</groupId>
+	<parent>
+        <groupId>eu.verdelhan</groupId>
+        <artifactId>java-samples</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
 	<artifactId>jodreports-samples</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	
 	<name>JODReports Samples</name>
 	<description>JODReports samples for creating office documents and reports in OpenDocument Text format (from templates).</description>
-
+	
 	<dependencies>
 		<dependency>
 			<groupId>net.sf.jodreports</groupId>
@@ -20,5 +24,5 @@
 			<version>1.2.16</version>
 		</dependency>
 	</dependencies>
-
+    
 </project>

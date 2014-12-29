@@ -2,9 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	
-	<groupId>eu.verdelhan.samples</groupId>
+	<parent>
+        <groupId>eu.verdelhan</groupId>
+        <artifactId>java-samples</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
 	<artifactId>twitter4j-samples</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	
 	<name>Twitter4J Samples</name>
 	<description>Twitter4J samples for posting tweets, reading a timeline, etc.</description>
 	
