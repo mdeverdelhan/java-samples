@@ -33,9 +33,9 @@
     </ciManagement>
 
     <modules>
-        <module>jodreports-samples</module>
-        <module>jspf-samples</module>
-        <module>twitter4j-samples</module>
+        <module>jodreports-sample</module>
+        <module>jspf-sample</module>
+        <module>twitter4j-sample</module>
     </modules>
 
     <properties>
