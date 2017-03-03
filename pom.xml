@@ -38,6 +38,7 @@
         <module>twitter4j-sample</module>
         <module>keystore-sample</module>
         <module>github-api-sample</module>
+        <module>ssh-sample</module>
     </modules>
 
     <properties>
