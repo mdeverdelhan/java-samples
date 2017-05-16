@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.util.List;
 
 import net.schmizz.sshj.SSHClient;
+import net.schmizz.sshj.transport.verification.PromiscuousVerifier;
 import net.schmizz.sshj.sftp.RemoteResourceInfo;
 import net.schmizz.sshj.sftp.SFTPClient;
 
@@ -41,12 +42,13 @@ public class SshClientExample {
             String password = "password";
             
             // Connection & authentication
+            sshClient.addHostKeyVerifier(new PromiscuousVerifier());
             sshClient.connect(hostname, port);
             sshClient.authPassword(username, password);
             
             // Directory listing on ~
             try (SFTPClient sftpClient = sshClient.newSFTPClient()) {
-                List<RemoteResourceInfo> res = sftpClient.ls("~");
+                List<RemoteResourceInfo> res = sftpClient.ls("/home/" + username);
                 res.forEach(r -> System.out.println(r.getName()));
             }
             
