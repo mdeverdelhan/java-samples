@@ -23,12 +23,13 @@
 package eu.verdelhan.samples.ssh;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import net.schmizz.sshj.SSHClient;
+import net.schmizz.sshj.common.IOUtils;
+import net.schmizz.sshj.connection.channel.direct.Session;
+import net.schmizz.sshj.connection.channel.direct.Session.Command;
 import net.schmizz.sshj.transport.verification.PromiscuousVerifier;
-import net.schmizz.sshj.sftp.RemoteResourceInfo;
-import net.schmizz.sshj.sftp.SFTPClient;
 
 public class SshClientExample {
 
@@ -46,11 +47,19 @@ public class SshClientExample {
             sshClient.connect(hostname, port);
             sshClient.authPassword(username, password);
             
-            // Directory listing on ~
-            try (SFTPClient sftpClient = sshClient.newSFTPClient()) {
-                List<RemoteResourceInfo> res = sftpClient.ls("/home/" + username);
-                res.forEach(r -> System.out.println(r.getName()));
+            try (Session session = sshClient.startSession()) {
+                // Find all .txt files
+                Command cmd = session.exec("find \"`pwd -P`\" -iname \"*.txt\"");
+                System.out.println(IOUtils.readFully(cmd.getInputStream()).toString());
+                
+                cmd.join(30, TimeUnit.SECONDS);
+                
+                // Exit status of the command
+                System.out.println("\n** exit status: " + cmd.getExitStatus());
             }
+            
+            // Disconnect
+            sshClient.disconnect();
             
         } catch (IOException e) {
             e.printStackTrace();
