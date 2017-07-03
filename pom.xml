@@ -39,6 +39,7 @@
         <module>keystore-sample</module>
         <module>github-api-sample</module>
         <module>ssh-sample</module>
+        <module>pi4j-sample</module>
     </modules>
 
     <properties>
