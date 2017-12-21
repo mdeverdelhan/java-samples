@@ -40,6 +40,7 @@
         <module>github-api-sample</module>
         <module>ssh-sample</module>
         <module>pi4j-sample</module>
+        <module>bitcoinj-sample</module>
     </modules>
 
     <properties>
